@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block title %} Ajouter un vacataire {% endblock %}
+{% block main %}
+<section class="gradiant-add vh-100">
+    <div class="container h-100">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto mt-5">
+                <h1 class="text-light">Ajouter une intervention</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mt-5">
+            <div class="col-md-auto card bg-dark text-white" style="border-radius: 1rem; padding:10pt;">
+                <!-- Formulaire -->
+                <form method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <label>Code module</label>
+                                <select name="code_module" class="form-select form-select-lg mb-3">
+                                    {% for module in modules %}
+                                    <option value="{{module['code_module']}}">{{module['code_module']}} {{module['intitule']}}</option>
+                                    {%endfor%}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center">
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <label>Nombre d'heures</label>
+                                <input type="text" class="form-control form-control-lg" name="nbre_heures">
+                            </div>
+                        </div>
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <label>Contrat</label>
+                                <select name="id_contrat" class="form-select form-select-lg mb-3">
+                                    {% for contrat in contrats %}
+                                    <option value="{{contrat['id_contrat']}}">{{contrat['date_deb']}} --> {{contrat['date_fin']}}</option>
+                                    {%endfor%}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center">
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <button class="btn btn-outline-light btn-lg" type="submit">Ajouter</button>
+                                <a href="{{url_for('liste_interventions')}}" class="btn btn-outline-light btn-lg">Annuler</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- Formulaire -->
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

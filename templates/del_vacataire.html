@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}Confirmer{% endblock %}
+{% block main %}
+<section class="gradiant-white vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-auto">
+                <h1>Êtes vous sur de vouloir supprimer <span class="text-danger">{{data['nom']}} {{data['prenom']}}</span> ?</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-auto">
+                <form method="post">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    {% if data['login'] != "" %}
+                    <label class="fs-2"><input type="checkbox" name="compte"> Cochez pour supprimer égalmement le compte <span class="text-danger">{{data['login']}} </span>associé</label><br>
+                    {% endif %}
+                    <br>
+                    <button class="btn btn-outline-danger btn-lg" type="submit">Supprimer</button>
+                    <a href="{{url_for('liste_vacataires')}}" class="btn btn-outline-primary btn-lg">Annuler</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

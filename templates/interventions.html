@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% set endpoint = 'interventions' %}
+{% block title %}Interventions{% endblock %}
+{% block main %}
+<div class="container">
+    <br>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h1>Tableau des Interventions</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Code Module</th>
+                        <th scope="col">Nombre d'heures</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for elm in interventions %}
+                    <tr>
+                        <th class="text-center" scope="row">{{ elm['id_contrat']}}</th>
+                        <td>{{ elm['code_module']}}</td>
+                        <td>{{ elm['nbre_heures'] }}</td>
+                        <td><a class="btn btn-outline-danger" href="{{ url_for('delete_intervention', id_intervention=elm['id_intervention'], code_module=elm['code_module'])}}">
+                            <i class="bi bi-trash-fill"></i>
+                        </a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th colspan="4">{{interventions | count}} Interventions</th>
+                    </tr>
+                    </tfoot>
+                </table>
+                <a class="btn btn-outline-success" href="{{url_for('add_intervention')}}">Ajouter une intervention</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

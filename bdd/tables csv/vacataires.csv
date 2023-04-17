@@ -1,0 +1,6 @@
+id_vacataire,nom,prenom,email,tel,statut,employeur,login,recrutable
+1,Rossi,Thomas,thomas.rossi@gmail.com,705257567,Salarié public,UGA,rossitho,1
+2,Guillet,Joséphine,josephine.guillet@hotmail.fr,978598105,Collaborateur bénévole,,guilletj,1
+3,Arnaud,Lucy,lucy.arnaud@yahoo.com,415603300,Collaborateur bénévole,,arnaudlu,1
+4,Didier,Maggie,maggie.didier@orange.fr,458825449,ASI,,,0
+5,Guyot-Gaillard,Marc,marc.guyot-gaillard@univ-grenoble-alpes.fr,623657373,ITRF,IUT1-GEII,guyotgam,0

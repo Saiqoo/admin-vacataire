@@ -1,0 +1,4 @@
+id_enseignant,nom,prenom,email,tel,login
+1,Cordier,Emmanuelle,emmanuelle.cordier@univ-grenoble-alpes.fr,651608809,cordiere
+2,Nicolas,Luce,luce.nicolas@univ-grenoble-alpes.fr,409021336,nicolasl
+3,Le Laurent,Lucas,lucas.le-laurent@univ-grenoble-alpes.fr,715397101,lelaurel

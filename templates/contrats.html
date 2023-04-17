@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% set endpoint = 'contrats' %}
+{% block title %}Contrats{% endblock %}
+{% block main %}
+<div class="container">
+    <br>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h1>Tableau des Contrats</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Début</th>
+                        <th scope="col">Fin</th>
+                        <th scope="col">Vacataire</th>
+                        <th scope="col">Referent</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for elm in contrats %}
+                    <tr>
+                        <th class="text-center" scope="row">{{ elm['id_contrat']}}</th>
+                        <td>{{ elm['date_deb']}}</td>
+                        <td>{{ elm['date_fin'] }}</td>
+                        <td>{{ elm['nom_vac'] }} {{ elm['prenom_vac'] }}</td>
+                        <td>{{ elm['nom_ens'] }} {{ elm['prenom_ens'] }}</td>
+                        <td><a href="{{ url_for('delete_contrat', id_contrat=elm['id_contrat']) }}">
+                            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button>
+                        </a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th colspan="6">{{contrats | count}} Contrats</th>
+                    </tr>
+                    </tfoot>
+                </table>
+                <h3><a class="btn btn-outline-success" href="{{ url_for('add_contrat') }}">Ajouter un contrat</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

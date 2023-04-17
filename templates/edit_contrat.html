@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block title %} Ajouter un contrat {% endblock %}
+{% block main %}
+<section class="gradiant-add vh-100">
+    <div class="container h-100">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto mt-5">
+                <h1 class="text-light">Ajouter un contrat</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mt-5">
+            <div class="col-md-auto card bg-dark text-white" style="border-radius: 1rem; padding:10pt;">
+                <!-- Formulaire -->
+                <form method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <label>Date du début du contrat</label>
+                                <input type="date" class="form-control" name="date_deb" value="{{data['date_deb'][:10] if data['date_deb'] != None}}">
+                            </div>
+                        </div>
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <label>Date de la fin du contrat</label>
+                                <input type="date" class="form-control" name="date_fin" value="{{data['date_fin'][:10] if data['date_fin'] != None}}">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                 <!-- Temporaire (à modifier par la suite avec les noms) -->
+                                <label>Id du référent</label>
+                                <input type="number" class="form-control" name="id_referent" placeholder="Id du réferent">
+                            </div>
+                        </div>
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <!-- Temporaire (à modifier par la suite avec les noms) -->
+                                <label>Id du vacataire</label>
+                                <input type="number" class="form-control" name="id_vacataire" placeholder="Id du vacataire">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center">
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <button class="btn btn-outline-light btn-lg" type="submit">Ajouter</button>
+                                <button class="btn btn-outline-light btn-lg" type="reset">Effacer</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- Formulaire -->
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

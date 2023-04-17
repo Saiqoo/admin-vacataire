@@ -1,0 +1,8 @@
+Nom du vacataire,Prénom du vacataire,Email du vacataire,Tel du vacataire,Statut professionnel,Employeur principal,Login du vacataire,Est recrutable,Début du contrat,Fin du contrat,Module des interventions,Nbre d'heures,Nom de l'enseignant référent,Prenom de l'enseignant référent,Email de l'enseignant,Tel de l'ensiegnant,Login de l'enseignant
+Rossi,Thomas,thomas.rossi@gmail.com,0705257567,Salarié public,UGA,rossitho,1,2021-11-01,2022-04-20,R1.05,15,Cordier,Emmanuelle,emmanuelle.cordier@univ-grenoble-alpes.fr,0651608809,cordiere
+Rossi,Thomas,thomas.rossi@gmail.com,0705257567,Salarié public,UGA,rossitho,1,2021-11-01,2022-04-20,R2.09,10,Cordier,Emmanuelle,emmanuelle.cordier@univ-grenoble-alpes.fr,0651608809,cordiere
+Guillet,Joséphine,josephine.guillet@hotmail.fr,0978598105,Collaborateur bénévole,,guilletj,1,2022-01-26,2022-06-07,R1.05,13,Nicolas,Luce,luce.nicolas@univ-grenoble-alpes.fr,0409021336,nicolasl
+Guillet,Joséphine,josephine.guillet@hotmail.fr,0978598105,Collaborateur bénévole,,guilletj,1,2022-01-26,2022-06-07,SAE.DevCloud.04,8,Nicolas,Luce,luce.nicolas@univ-grenoble-alpes.fr,0409021336,nicolasl
+Arnaud,Lucy,lucy.arnaud@yahoo.com,0415603300,Collaborateur bénévole,,arnaudlu,1,2021-09-17,2021-11-19,SAE1.04,10,Le Laurent,Lucas,lucas.le-laurent@univ-grenoble-alpes.fr,0715397101,lelaurel
+Didier,Maggie,maggie.didier@orange.fr,0458825449,ASI,,,0,,,,,,,,,
+Guyot-Gaillard,Marc,marc.guyot-gaillard@univ-grenoble-alpes.fr,0623657373,ITRF,IUT1-GEII,guyotgam,0,,,,,,,,,

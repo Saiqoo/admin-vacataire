@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set endpoint = 'vacataires' %}
+{% block title %}Vacataires{% endblock %}
+
+{% block main %}
+<div class="container">
+    <br>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h1>Tableau des vacataires</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Tel</th>
+                        <th scope="col">Statut</th>
+                        <th scope="col">Employeur</th>
+                        <th scope="col">Login</th>
+                        <th scope="col">Recrutable</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for elm in vacataires %}
+                    <tr>
+                        <th class="text-center" scope="row">{{ elm['id_vacataire']}}</th>
+                        <td>{{ elm['nom']}}</td>
+                        <td>{{ elm['prenom']}}</td>
+                        <td>{{ elm['email']}}</td>
+                        <td>{{ elm['tel']}}</td>
+                        <td>{{ elm['statut']}}</td>
+                        <td>{{ elm['employeur'] if elm.employeur}}</td>
+                        <td>{{ elm['login'] if elm.login}}</td>
+                        <td class="text-center"><input type="checkbox" {{'checked' if elm.recrutable}} onclick="return false"></td>
+                        <td><a href="{{ url_for('edit_vacataire', id_vacataire=elm['id_vacataire'])}}">
+                            <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></button>
+                        </a></td>
+                        <td><a href="{{ url_for('delete_vacataire', id_vacataire=elm['id_vacataire'])}}">
+                            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button>
+                        </a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th colspan="11">{{vacataires | count}} vacataires</th>
+                    </tr>
+                    </tfoot>
+                </table>
+                <a class="btn btn-outline-success" href="{{ url_for('add_vacataire') }}">Ajouter un vacataire</a>
+            </div>
+        </div>
+    </div>
+</div>    
+    
+    
+
+{% endblock %}
